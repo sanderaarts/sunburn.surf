@@ -1,0 +1,92 @@
+:root {
+	--timer-faster: .0625s;
+	--timer-fast: .125s;
+	--timer-medium: .25s;
+}
+
+*,
+*::before,
+*::after {
+	box-shadow: inherit;
+}
+
+html {
+	height: 100%;
+	box-shadow: border-box;
+}
+
+body {
+	--padding-top: 6.5rem;
+	--padding-bottom: .5rem;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: center;
+	font: normal 1rem / 1.5 Bivona, Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-shadow: 0 .1663em .5em #000;
+	margin: 0;
+	padding: var(--padding-top) 2rem var(--padding-bottom);
+	min-height: calc(100vh - var(--padding-top) - var(--padding-bottom));
+	background: url('/assets/images/surfboards-in-waikiki.jpg') center / cover no-repeat scroll transparent;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+a:focus,
+a:hover {
+	text-decoration: underline;
+}
+
+header {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+h1,
+p {
+	margin: 0;
+}
+
+h1 svg {
+	width: 33.3333vw;
+	height: auto;
+	fill: currentColor;
+	filter: drop-shadow(0 .25rem .375rem rgba(0, 0, 0, .75));
+	transform: scale(1) rotate(0deg);
+	transition: transform var(--timer-fast) ease-in-out, filter var(--timer-fast) ease-in-out;
+}
+
+h1:hover svg {
+	filter: drop-shadow(0 .25rem .25rem rgba(0, 0, 0, .75));
+	transform: scale(.98) rotate(1deg);;
+}
+
+header p {
+	font-size: 2vw;
+	transform: rotate(-1deg);
+	transition: transform var(--timer-faster) ease-in-out var(--timer-faster);
+}
+
+header:hover p {
+	transform: rotate(-2deg);
+}
+
+main p {
+	font-size: 3vw;
+	transform: scale(1) rotate(1deg);
+	transition: transform var(--timer-medium) ease-in-out, text-shadow var(--timer-medium) ease-in-out;
+}
+
+main:hover p {
+	text-shadow: 0 .1406em .5625em #000;
+	transform: scale(1.0625) rotate(-1deg);
+}
+
+footer {
+	font-size: .75rem;
+}
