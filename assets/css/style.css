@@ -28,6 +28,16 @@ body {
 	margin: 0;
 	padding: var(--padding-top) 2rem var(--padding-bottom);
 	min-height: calc(100vh - var(--padding-top) - var(--padding-bottom));
+	background: linear-gradient(to bottom, #748bad, #c2cecf 60%, #e5ddc3 75%, #d5c4ab);
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	background: url('/assets/images/surfboards-in-waikiki.jpg') center / cover no-repeat scroll transparent;
 }
 
@@ -54,6 +64,7 @@ p {
 
 h1 svg {
 	width: 33.3333vw;
+	min-width: 17.5rem;
 	height: auto;
 	fill: currentColor;
 	filter: drop-shadow(0 .25rem .375rem rgba(0, 0, 0, .75));
@@ -67,9 +78,15 @@ h1:hover svg {
 }
 
 header p {
-	font-size: 2vw;
+	font-size: 1rem;
 	transform: rotate(-1deg);
 	transition: transform var(--timer-faster) ease-in-out var(--timer-faster);
+}
+
+@media (min-width: 50rem) {
+	header p {
+		font-size: 2vw;
+	}
 }
 
 header:hover p {
@@ -77,9 +94,15 @@ header:hover p {
 }
 
 main p {
-	font-size: 3vw;
+	font-size: 2rem;
 	transform: scale(1) rotate(1deg);
 	transition: transform var(--timer-medium) ease-in-out, text-shadow var(--timer-medium) ease-in-out;
+}
+
+@media (min-width: 66.875rem) {
+	main p {
+		font-size: 3vw;
+	}
 }
 
 main:hover p {
@@ -88,5 +111,16 @@ main:hover p {
 }
 
 footer {
+	position: relative;
 	font-size: .75rem;
+}
+
+footer p {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+footer span {
+	white-space: nowrap;
 }
